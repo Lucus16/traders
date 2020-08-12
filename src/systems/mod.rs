@@ -86,7 +86,7 @@ impl<'a> System<'a> for DeriveRotationalTransform {
 
     fn run(&mut self, (angle, mut transform): Self::SystemData) {
         for (angle, transform) in (&angle, &mut transform).join() {
-            transform.set_rotation_2d(*angle.deref());
+            transform.set_rotation_2d(-*angle.deref());
         }
     }
 }

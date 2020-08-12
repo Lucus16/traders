@@ -49,7 +49,7 @@ static METAL_ORE_RECIPE: FabricationRecipe = FabricationRecipe {
     ingredients: &[],
     products: &[(CargoType::MetalOre, CargoUnits(1))],
 };
-static METAL_RECIPE: FabricationRecipe = FabricationRecipe {
+static _METAL_RECIPE: FabricationRecipe = FabricationRecipe {
     duration: Time(50),
     ingredients: &[(CargoType::MetalOre, CargoUnits(5))],
     products: &[(CargoType::Metal, CargoUnits(1))],
@@ -106,6 +106,8 @@ pub fn create_trader(world: &mut World, pos: Position, behaviour: ShipBehaviour)
         })
         .with(hitbox)
         .with(Transform::default())
+        .with(Angle::new(f32::default()))
+        .with(AngularMomentum::new(0.0))
         .with(behaviour)
         .with(Cargo::new(CargoUnits(100)))
         .build();

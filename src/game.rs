@@ -91,11 +91,11 @@ impl SimpleState for Game {
         create_station(world, Position::new(Point2::new(300., 100.)));
         create_station(world, Position::new(Point2::new(200., 600.)));
 
-        create_trader(
-            world,
-            Position::new(Point2::new(900., 900.)),
-            ShipBehaviour::Idle,
-        );
+        //create_trader(
+        //    world,
+        //    Position::new(Point2::new(900., 900.)),
+        //    ShipBehaviour::Idle,
+        //);
 
         let t1 = create_trader(
             world,
